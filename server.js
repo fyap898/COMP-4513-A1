@@ -374,6 +374,44 @@ app.get('/genres/painting/:ref', async (req, resp) => {
     }
 });
 
+////////////////////////////////////////////////////////////////////////////
+app.get('/paintings/genre/:ref', async (req, resp) => {
+    try{
+        const {data, error} = await supabase
+        .from('paintinggenres')
+        .select('paintings!paintingId(paintingId, title, yearOfWork)')
+        .eq('genreId', req.params.ref)
+        .order('paintings(yearOfWork)', {ascending: true});
+
+        if(error)
+            console.log(error)
+        
+        resp.send(data);
+    } catch(err) {
+        console.error("Unexpected error: ", err);
+        resp.status(500).send("Unexpected error occured");
+    }
+});
+
+app.get('/paintings/era/:ref', async (req, resp) => {
+    try{
+        const {data, error} = await supabase
+        .from('paintinggenres')
+        .select('eras!eraId(paintingId, title, yearOfWork)')
+        .eq('genreId', req.params.ref)
+        .order('paintings(yearOfWork)', {ascending: true});
+
+        if(error)
+            console.log(error)
+        
+        resp.send(data);
+    } catch(err) {
+        console.error("Unexpected error: ", err);
+        resp.status(500).send("Unexpected error occured");
+    }
+});
+
+
 
 app.listen(8080, () => {
     console.log('listening on port 8080');
@@ -402,5 +440,8 @@ app.listen(8080, () => {
     console.log('http://localhost:8080/genres');
     console.log('http://localhost:8080/genres/76');
     console.log('http://localhost:8080/genres/painting/408');
+
+    console.log('http://localhost:8080/paintings/genre/78');
+    console.log('http://localhost:8080/paintings/era/2');
 
 });
