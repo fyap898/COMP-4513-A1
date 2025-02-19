@@ -1,9 +1,11 @@
 const express = require('express');
 const supa = require('@supabase/supabase-js');
 const app = express();
+require('dotenv').config();
 
-const supaUrl = 'https://pvjjzcgypichndagmlxv.supabase.co';
-const supaAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2amp6Y2d5cGljaG5kYWdtbHh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkyMTQ1ODUsImV4cCI6MjA1NDc5MDU4NX0.5wM2napaaigBgWOBZuJhehjzJ2R0ULFDW1jX6OHnA5M';
+
+const supaUrl = process.env.SUPAURL;
+const supaAnonKey = process.env.SUPAKEY;
 
 const supabase = supa.createClient(supaUrl, supaAnonKey);
 
@@ -557,7 +559,9 @@ app.get('/counts/topgenres/:ref', async (req, resp) => {
         }
 });
 
-app.listen(8080, () => {
+
+port = process.env.PORT;
+app.listen(port, () => {
     console.log('listening on port 8080');
     console.log('http://localhost:8080/eras');
 
