@@ -11,7 +11,6 @@ Supabase - Database for imported data
 Glitch - Web application deployment
 
 ### API Endpoints
-|-------------------------------------------------------|-------------------------------------------------------------------------------|
 |API Endpoint                                           |Description                                                                    |
 |-------------------------------------------------------|-------------------------------------------------------------------------------|
 |/api/eras                                              |                                                                               |
@@ -23,7 +22,7 @@ Glitch - Web application deployment
 |/api/artists/search/substring                          |                                                                               |
 |/api/artists/country/substring                         |                                                                               |
 |/api/paintings                                         |                                                                               |
-|/api/paintings/sort/title|year                         |                                                                               |
+|/api/paintings/sort/title\|\year                       |                                                                               |
 |/api/paintings/ref                                     |                                                                               |
 |/api/paintings/search/substring                        |                                                                               |
 |/api/paintings/years/start/end                         |                                                                               |
