@@ -13,16 +13,16 @@ Glitch - Web application deployment
 ### API Endpoints
 |API Endpoint                                           |Description                                                                    |
 |-------------------------------------------------------|-------------------------------------------------------------------------------|
-|/api/eras                                              |                                                                               |
-|/api/galleries                                         |                                                                               |
-|/api/galleries/ref                                     |                                                                               |
-|/api/galleries/country/substring                       |                                                                               |
-|/api/artists                                           |                                                                               |
+|/api/eras                                              |Returns all the eras.                                                          |
+|/api/galleries                                         |Returns every fields of all the galleries.                                     |
+|/api/galleries/ref                                     |Returns a specific gallery.                                                    |
+|/api/galleries/country/substring                       |Returns galleries whose field 'galleryCountry' begins with the input substring.|
+|/api/artists                                           |Returns every field of all the artists.                                        |
 |/api/artists/ref                                       |                                                                               |
 |/api/artists/search/substring                          |                                                                               |
 |/api/artists/country/substring                         |                                                                               |
 |/api/paintings                                         |                                                                               |
-|/api/paintings/sort/title\|\year                       |                                                                               |
+|/api/paintings/sort/title\|year                        |                                                                               |
 |/api/paintings/ref                                     |                                                                               |
 |/api/paintings/search/substring                        |                                                                               |
 |/api/paintings/years/start/end                         |                                                                               |
