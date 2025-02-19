@@ -9,7 +9,7 @@ const supaAnonKey = process.env.SUPAKEY;
 
 const supabase = supa.createClient(supaUrl, supaAnonKey);
 
-app.get('/eras', async (req, resp) => {
+app.get('/api/eras', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('eras')
@@ -26,7 +26,7 @@ app.get('/eras', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/galleries', async (req, resp) => {
+app.get('/api/galleries', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('galleries')
@@ -42,7 +42,7 @@ app.get('/galleries', async (req, resp) => {
     }
 });
 
-app.get('/galleries/:ref', async (req, resp) => {
+app.get('/api/galleries/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('galleries')
@@ -59,7 +59,7 @@ app.get('/galleries/:ref', async (req, resp) => {
     }
 });
 
-app.get('/galleries/country/:cty', async (req, resp) => {
+app.get('/api/galleries/country/:cty', async (req, resp) => {
     country = req.params.cty + '%';
     try{
         const {data, error} = await supabase
@@ -78,7 +78,7 @@ app.get('/galleries/country/:cty', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/artists', async (req, resp) => {
+app.get('/api/artists', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('artists')
@@ -94,7 +94,7 @@ app.get('/artists', async (req, resp) => {
     }
 });
 
-app.get('/artists/:ref', async (req, resp) => {
+app.get('/api/artists/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('artists')
@@ -111,7 +111,7 @@ app.get('/artists/:ref', async (req, resp) => {
     }
 });
 
-app.get('/artists/search/:lname', async (req, resp) => {
+app.get('/api/artists/search/:lname', async (req, resp) => {
     lName = req.params.lname + '%'
 
     try{
@@ -131,7 +131,7 @@ app.get('/artists/search/:lname', async (req, resp) => {
 });
 
 // might change
-app.get('/artists/nation/:cty', async (req, resp) => {
+app.get('/api/artists/nation/:cty', async (req, resp) => {
     nationality = req.params.cty + '%'
 
     try{
@@ -151,7 +151,7 @@ app.get('/artists/nation/:cty', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/paintings', async (req, resp) => {
+app.get('/api/paintings', async (req, resp) => {
 
     try{
         const {data, error} = await supabase
@@ -169,7 +169,7 @@ app.get('/paintings', async (req, resp) => {
     }
 });
 
-app.get('/paintings/sort/:query', async (req, resp) => {
+app.get('/api/paintings/sort/:query', async (req, resp) => {
     const query = req.params.query;
 
     try{
@@ -202,7 +202,7 @@ app.get('/paintings/sort/:query', async (req, resp) => {
     }
 });
 
-app.get('/paintings/:ref', async (req, resp) => {
+app.get('/api/paintings/:ref', async (req, resp) => {
 
     try{
         const {data, error} = await supabase
@@ -220,7 +220,7 @@ app.get('/paintings/:ref', async (req, resp) => {
     }
 });
 
-app.get('/paintings/search/:title', async (req, resp) => {
+app.get('/api/paintings/search/:title', async (req, resp) => {
     const match = '%' + req.params.title + '%';
 
     try{
@@ -239,7 +239,7 @@ app.get('/paintings/search/:title', async (req, resp) => {
     }
 });
 
-app.get('/paintings/years/:start/:end', async (req, resp) => {
+app.get('/api/paintings/years/:start/:end', async (req, resp) => {
     const start = parseInt(req.params.start);
     const end = parseInt(req.params.end);
 
@@ -272,7 +272,7 @@ app.get('/paintings/years/:start/:end', async (req, resp) => {
 
 });
 
-app.get('/paintings/galleries/:ref', async (req, resp) => {
+app.get('/api/paintings/galleries/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('paintings')
@@ -289,7 +289,7 @@ app.get('/paintings/galleries/:ref', async (req, resp) => {
     }
 });
 
-app.get('/paintings/artist/:ref', async (req, resp) => {
+app.get('/api/paintings/artist/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('paintings')
@@ -306,7 +306,7 @@ app.get('/paintings/artist/:ref', async (req, resp) => {
     }
 });
 
-app.get('/paintings/artists/country/:cty', async (req, resp) => {
+app.get('/api/paintings/artists/country/:cty', async (req, resp) => {
     const match = req.params.cty + '%';
     try{
         const {data, error} = await supabase
@@ -325,7 +325,7 @@ app.get('/paintings/artists/country/:cty', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/genres', async (req, resp) => {
+app.get('/api/genres', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('genres')
@@ -341,7 +341,7 @@ app.get('/genres', async (req, resp) => {
     }
 });
 
-app.get('/genres/:ref', async (req, resp) => {
+app.get('/api/genres/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('genres')
@@ -358,7 +358,7 @@ app.get('/genres/:ref', async (req, resp) => {
     }
 });
 
-app.get('/genres/painting/:ref', async (req, resp) => {
+app.get('/api/genres/painting/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('genres')
@@ -377,7 +377,7 @@ app.get('/genres/painting/:ref', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/paintings/genre/:ref', async (req, resp) => {
+app.get('/api/paintings/genre/:ref', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('paintinggenres')
@@ -395,7 +395,7 @@ app.get('/paintings/genre/:ref', async (req, resp) => {
     }
 });
 
-app.get('/paintings/era/:ref', async (req, resp) => {
+app.get('/api/paintings/era/:ref', async (req, resp) => {
     try{
         const eraId = req.params.ref;
 
@@ -428,7 +428,7 @@ app.get('/paintings/era/:ref', async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/counts/genres', async (req, resp) => {
+app.get('/api/counts/genres', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('paintinggenres')
@@ -469,7 +469,7 @@ app.get('/counts/genres', async (req, resp) => {
         }
 });
 
-app.get("/counts/artists", async (req, resp) => {
+app.get('/api/counts/artists', async (req, resp) => {
     try{
         const {data, error} = await supabase
         .from('paintings')
@@ -512,7 +512,7 @@ app.get("/counts/artists", async (req, resp) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////
-app.get('/counts/topgenres/:ref', async (req, resp) => {
+app.get('/api/counts/topgenres/:ref', async (req, resp) => {
     const atLeast = req.params.ref;
     try{
         const {data, error} = await supabase
