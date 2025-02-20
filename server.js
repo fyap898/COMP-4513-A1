@@ -563,37 +563,37 @@ app.get('/api/counts/topgenres/:ref', async (req, resp) => {
 port = process.env.PORT;
 app.listen(port, () => {
     console.log('listening on port 8080');
-    console.log('http://localhost:8080/eras');
+    console.log('http://localhost:8080/api/eras');
 
-    console.log('http://localhost:8080/galleries');
-    console.log('http://localhost:8080/galleries/30');
-    console.log('http://localhost:8080/galleries/country/fra');
+    console.log('http://localhost:8080/api/galleries');
+    console.log('http://localhost:8080/api/galleries/30');
+    console.log('http://localhost:8080/api/galleries/country/fra');
 
-    console.log('http://localhost:8080/artists');
-    console.log('http://localhost:8080/artists/12');
-    console.log('http://localhost:8080/artists/search/ma');
-    console.log('http://localhost:8080/artists/nation/fra');
+    console.log('http://localhost:8080/api/artists');
+    console.log('http://localhost:8080/api/artists/12');
+    console.log('http://localhost:8080/api/artists/search/ma');
+    console.log('http://localhost:8080/api/artists/nation/fra');
 
-    console.log('http://localhost:8080/paintings');
-    console.log('http://localhost:8080/paintings/sort/year');
-    console.log('http://localhost:8080/paintings/sort/title');
-    console.log('http://localhost:8080/paintings/63');
-    console.log('http://localhost:8080/paintings/search/port');
-    console.log('http://localhost:8080/paintings/years/1800/1850');
-    console.log('http://localhost:8080/paintings/years/1850/1800');
-    console.log('http://localhost:8080/paintings/galleries/5');
-    console.log('http://localhost:8080/paintings/artist/16');
-    console.log('http://localhost:8080/paintings/artists/country/ital');
+    console.log('http://localhost:8080/api/paintings');
+    console.log('http://localhost:8080/api/paintings/sort/year');
+    console.log('http://localhost:8080/api/paintings/sort/title');
+    console.log('http://localhost:8080/api/paintings/63');
+    console.log('http://localhost:8080/api/paintings/search/port');
+    console.log('http://localhost:8080/api/paintings/years/1800/1850');
+    console.log('http://localhost:8080/api/paintings/years/1850/1800');
+    console.log('http://localhost:8080/api/paintings/galleries/5');
+    console.log('http://localhost:8080/api/paintings/artist/16');
+    console.log('http://localhost:8080/api/paintings/artists/country/ital');
 
-    console.log('http://localhost:8080/genres');
-    console.log('http://localhost:8080/genres/76');
-    console.log('http://localhost:8080/genres/painting/408');
+    console.log('http://localhost:8080/api/genres');
+    console.log('http://localhost:8080/api/genres/76');
+    console.log('http://localhost:8080/api/genres/painting/408');
 
-    console.log('http://localhost:8080/paintings/genre/78');
-    console.log('http://localhost:8080/paintings/era/2');
+    console.log('http://localhost:8080/api/paintings/genre/78');
+    console.log('http://localhost:8080/api/paintings/era/2');
 
-    console.log('http://localhost:8080/counts/genres');
-    console.log('http://localhost:8080/counts/artists');
-    console.log('http://localhost:8080/counts/topgenres/20');
+    console.log('http://localhost:8080/api/counts/genres');
+    console.log('http://localhost:8080/api/counts/artists');
+    console.log('http://localhost:8080/api/counts/topgenres/20');
 
 });

@@ -13,9 +13,9 @@ Glitch - Web application deployment
 ### API Endpoints
 |API Endpoint                                           |Description                                                                    |
 |-------------------------------------------------------|-------------------------------------------------------------------------------|
-|/api/eras                                              |Returns all the eras.                                                          |
-|/api/galleries                                         |Returns every fields of all the galleries.                                     |
-|/api/galleries/ref                                     |Returns a specific gallery.                                                    |
+|https://grave-talented-floss.glitch.me/api/eras        |Returns all the eras.                                                          |
+|https://grave-talented-floss.glitch.me/api/galleries   |Returns every fields of all the galleries.                                     |
+|https://grave-talented-floss.glitch.me/api/galleries/ref|Returns a specific gallery.                                                    |
 |/api/galleries/country/substring                       |Returns galleries whose field 'galleryCountry' begins with the input substring.|
 |/api/artists                                           |Returns every field of all the artists.                                        |
 |/api/artists/ref                                       |                                                                               |
