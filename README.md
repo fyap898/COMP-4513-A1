@@ -10,25 +10,27 @@ Express - Framework for Node
 Supabase - Database for imported data
 Glitch - Web application deployment
 
+
+
 ### API Endpoints
 |API Endpoint                                           |Description                                                                    |
 |-------------------------------------------------------|-------------------------------------------------------------------------------|
-|https://grave-talented-floss.glitch.me/api/eras        |Returns all the eras.                                                          |
-|https://grave-talented-floss.glitch.me/api/galleries   |Returns every fields of all the galleries.                                     |
-|https://grave-talented-floss.glitch.me/api/galleries/ref|Returns a specific gallery.                                                    |
+|/api/eras                                              |Returns all the eras.                                                          |
+|/api/galleries                                         |Returns every fields of all the galleries.                                     |
+|/api/galleries/ref                                     |Returns a specific gallery.                                                    |
 |/api/galleries/country/substring                       |Returns galleries whose field 'galleryCountry' begins with the input substring.|
 |/api/artists                                           |Returns every field of all the artists.                                        |
-|/api/artists/ref                                       |                                                                               |
-|/api/artists/search/substring                          |                                                                               |
-|/api/artists/country/substring                         |                                                                               |
-|/api/paintings                                         |                                                                               |
-|/api/paintings/sort/title\|year                        |                                                                               |
-|/api/paintings/ref                                     |                                                                               |
-|/api/paintings/search/substring                        |                                                                               |
-|/api/paintings/years/start/end                         |                                                                               |
-|/api/paintings/galleries/ref                           |                                                                               |
-|/api/paintings/artist/ref                              |                                                                               |
-|/api/paintings/artists/country/substring               |                                                                               |
+|/api/artists/ref                                       |Returns a specific artist.                                                     |
+|/api/artists/search/substring                          |Returns artists whose field 'lastName' begins with the input substring.        |
+|/api/artists/country/substring                         |Returns artists whose field 'nationality' begins with the input substring.     |
+|/api/paintings                                         |Returns all the paintings                                                      |
+|/api/paintings/sort/title\|year                        |Returns all the paintings sorted by keyword 'title' or 'year'.                 |
+|/api/paintings/ref                                     |Returns a specific painting.                                                   |
+|/api/paintings/search/substring                        |Returns paintings whose field 'title' contains input substring.                |
+|/api/paintings/years/start/end                         |Returns paintings whose field 'yearOfWork' is between input start and end year.|
+|/api/paintings/galleries/ref                           |Returns all the paintings that is in the specific gallery.                     |
+|/api/paintings/artist/ref                              |Returns all the paintings by specific artist.                                  |
+|/api/paintings/artists/country/substring               |Returns all the paintings by artists whose field 'nationality' begins with the input substring. |
 |/api/genres                                            |                                                                               |
 |/api/genres/ref                                        |                                                                               |
 |/api/genres/painting/ref                               |                                                                               |
@@ -37,3 +39,31 @@ Glitch - Web application deployment
 |/api/counts/genres                                     |                                                                               |
 |/api/counts/artists                                    |                                                                               |
 |/api/counts/topgenres/ref                              |                                                                               |
+
+### Example API endpoints
+https://grave-talented-floss.glitch.me/api/eras
+https://grave-talented-floss.glitch.me/api/galleries
+https://grave-talented-floss.glitch.me/api/galleries/30
+https://grave-talented-floss.glitch.me/api/galleries/country/fra
+https://grave-talented-floss.glitch.me/api/artists
+https://grave-talented-floss.glitch.me/api/artists/12
+https://grave-talented-floss.glitch.me/api/artists/search/ma
+https://grave-talented-floss.glitch.me/api/artists/nation/fra
+https://grave-talented-floss.glitch.me/api/paintings
+https://grave-talented-floss.glitch.me/api/paintings/sort/year
+https://grave-talented-floss.glitch.me/api/paintings/sort/title
+https://grave-talented-floss.glitch.me/api/paintings/63
+https://grave-talented-floss.glitch.me/api/paintings/search/port
+https://grave-talented-floss.glitch.me/api/paintings/years/1800/1850
+https://grave-talented-floss.glitch.me/api/paintings/years/1850/1800
+https://grave-talented-floss.glitch.me/api/paintings/galleries/5
+https://grave-talented-floss.glitch.me/api/paintings/artist/16
+https://grave-talented-floss.glitch.me/api/paintings/artists/country/ital
+https://grave-talented-floss.glitch.me/api/genres
+https://grave-talented-floss.glitch.me/api/genres/76
+https://grave-talented-floss.glitch.me/api/genres/painting/408
+https://grave-talented-floss.glitch.me/api/paintings/genre/78
+https://grave-talented-floss.glitch.me/api/paintings/era/2
+https://grave-talented-floss.glitch.me/api/counts/genres
+https://grave-talented-floss.glitch.me/api/counts/artists
+https://grave-talented-floss.glitch.me/api/counts/topgenres/20
