@@ -31,14 +31,14 @@ Glitch - Web application deployment
 |/api/paintings/galleries/ref                           |Returns all the paintings that is in the specific gallery.                     |
 |/api/paintings/artist/ref                              |Returns all the paintings by specific artist.                                  |
 |/api/paintings/artists/country/substring               |Returns all the paintings by artists whose field 'nationality' begins with the input substring. |
-|/api/genres                                            |                                                                               |
-|/api/genres/ref                                        |                                                                               |
-|/api/genres/painting/ref                               |                                                                               |
-|/api/paintings/genre/ref                               |                                                                               |
-|/api/paintings/era/ref                                 |                                                                               |
-|/api/counts/genres                                     |                                                                               |
-|/api/counts/artists                                    |                                                                               |
-|/api/counts/topgenres/ref                              |                                                                               |
+|/api/genres                                            |Returns all genres.                                                            |
+|/api/genres/ref                                        |Returns specific genre.                                                        |
+|/api/genres/painting/ref                               |Returns specific painting's genre.                                             |
+|/api/paintings/genre/ref                               |Returns paintings that use specific genre.                                     |
+|/api/paintings/era/ref                                 |Returns paintings in specific era.                                             |
+|/api/counts/genres                                     |Returns all genres with number of paintings that use it.                       |
+|/api/counts/artists                                    |Returns all artists and their number of paintings created.                     |
+|/api/counts/topgenres/ref                              |Returns genres with at least specific amount of paintings.                     |
 
 ### Example API endpoints
 https://grave-talented-floss.glitch.me/api/eras

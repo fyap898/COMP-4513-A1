@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
-const routerMisc = require('./misc.js');
+const routerMisc = require('./scripts/misc.js');
 routerMisc.allEras(app);
 routerMisc.allGalleries(app);
 routerMisc.galleryCountry(app);

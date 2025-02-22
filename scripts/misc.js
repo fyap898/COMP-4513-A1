@@ -1,4 +1,4 @@
-const provider = require('./server-provider.js');
+const provider = require('../server-provider.js');
 const supabase = provider.database;
 
 const allEras = (app) =>{
