@@ -2,7 +2,7 @@
 
 ### Overview
 This project is an API for query art from given CSV format data: artist, eras, galleries, genres, painting genres, paintings and shapes.
-With given specific API route, the data will be returned in JSON format.
+The CSV datas, will be uploaded to web-database, Supabase, where will be used to access from the API. With given specific API route, the data will be returned in JSON format.
 
 ### Built with:
 Node.JS - JavaScript runtime environment
@@ -39,6 +39,8 @@ Glitch - Web application deployment
 |/api/counts/genres                                     |Returns all genres with number of paintings that use it.                       |
 |/api/counts/artists                                    |Returns all artists and their number of paintings created.                     |
 |/api/counts/topgenres/ref                              |Returns genres with at least specific amount of paintings.                     |
+
+
 
 ### Example API endpoints
 https://grave-talented-floss.glitch.me/api/eras
