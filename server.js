@@ -63,7 +63,7 @@ app.get('/api/galleries/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch gallery with ID: " + galleryId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No gallery with ID \"" + galleryId + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No gallery with ID [" + galleryId + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -85,7 +85,7 @@ app.get('/api/galleries/country/:cty', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch galleries with country begins with: " + country + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No gallery with country begins with \"" + country + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No gallery with country begins with [" + country + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -128,7 +128,7 @@ app.get('/api/artists/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch artist with ID: " + artistId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No artist with ID \"" + artistId + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No artist with ID [" + artistId + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -150,7 +150,7 @@ app.get('/api/artists/search/:lname', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch artists with last name begins with: " + lName + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No artist with last name begins with \"" + lName + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No artist with last name begins with [" + lName + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -172,7 +172,7 @@ app.get('/api/artists/country/:cty', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch artists with nationality begins with: " + nationality + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No artist with nationality begins with \"" + nationality + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No artist with nationality begins with [" + nationality + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -242,7 +242,7 @@ app.get('/api/paintings/sort/:query', async (req, resp) => {
             } else 
                 resp.send(data);
         } else{
-            return resp.status(404).json({ success: false, message: "Invalid key input, make sure input key is correct, either \"title\" or \"year\"."});
+            return resp.status(404).json({ success: false, message: "Invalid key input, make sure input key is correct, either title or year."});
         }
     } catch(err) {
             console.error("Unexpected error: ", err);
@@ -263,7 +263,7 @@ app.get('/api/paintings/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch painting with ID: " + paintingId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No painting with ID: " + paintingId + " is fetched."});
+            return resp.status(404).json({ success: false, message: "No painting with ID: [" + paintingId + "] is fetched."});
         } else 
             resp.send(data);
 
@@ -288,7 +288,7 @@ app.get('/api/paintings/search/:title', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch paintings with title contains: " + match + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No painting with title contains \"" + match + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No painting with title contains [" + match + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -317,7 +317,7 @@ app.get('/api/paintings/years/:start/:end', async (req, resp) => {
                     console.error(error);
                     return resp.status(400).json({success: false, message:"Failed to fetch paintings between year " + start +  " and year " + end + "."});
                 } else if(!data.length){
-                    return resp.status(404).json({ success: false, message: "No painting between year " + start + " and year " + end + " is fetched."});
+                    return resp.status(404).json({ success: false, message: "No painting between year [" + start + "] and year [" + end + "] is fetched."});
                 } else 
                     return resp.send(data);
 
@@ -327,7 +327,7 @@ app.get('/api/paintings/years/:start/:end', async (req, resp) => {
             }
 
         } else 
-            return resp.status(404).json({ success: false, message: "Invalid year input, \"/api/years/start/end\", 'end' year must greater than 'start' year."});
+            return resp.status(404).json({ success: false, message: "Invalid year input, /api/years/start/end, 'end' year must greater than 'start' year."});
     } else
         return resp.status(404).json({ success: false, message: "Invalid year input, ensure input year is integer only."});
 
@@ -346,9 +346,9 @@ app.get('/api/paintings/galleries/:ref', async (req, resp) => {
 
         if(error){
             console.error(error);
-            return resp.status(400).json({success: false, message:"Failed to fetch painting with ID: " + galleryId + "."});
+            return resp.status(400).json({success: false, message:"Failed to fetch painting in gallery with ID: " + galleryId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No painting with ID: " + galleryId + " is fetched."});
+            return resp.status(404).json({ success: false, message: "No painting in gallery with ID: [" + galleryId + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -373,7 +373,7 @@ app.get('/api/paintings/artist/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch paintings by artist with ID: " + artistId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No paintings by artist with ID: " + artistId + " is fetched."});
+            return resp.status(404).json({ success: false, message: "No paintings by artist with ID: [" + artistId + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -398,7 +398,7 @@ app.get('/api/paintings/artists/country/:cty', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch paintings by artists with nationality begins with: " + match + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No paintings by artists with nationality begins with \"" + match + "\" is fetched."});
+            return resp.status(404).json({ success: false, message: "No paintings by artists with nationality begins with [" + match + "] is fetched."});
         } else 
             return  resp.send(data);
 
@@ -441,7 +441,7 @@ app.get('/api/genres/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch genre with ID: " + genreId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No genre with ID: " + genreId + " is fetched."});
+            return resp.status(404).json({ success: false, message: "No genre with ID: [" + genreId + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -464,7 +464,7 @@ app.get('/api/genres/painting/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch genre used in painting with ID: " + paintingId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "Genre used in painting with ID: " + paintingId + " is not fetched."});
+            return resp.status(404).json({ success: false, message: "Genre used in painting with ID: [" + paintingId + "] is not fetched."});
         } else 
             return resp.send(data);
 
@@ -488,7 +488,7 @@ app.get('/api/paintings/genre/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch paintings with genre ID: " + genreId + "."});
         } else if(!data.length){
-            return resp.status(404).json({ success: false, message: "No painting with genre ID: " + genreId + " is fetched."});
+            return resp.status(404).json({ success: false, message: "No painting with genre ID: [" + genreId + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -522,7 +522,7 @@ app.get('/api/paintings/era/:ref', async (req, resp) => {
             console.error(error);
             return resp.status(400).json({success: false, message:"Failed to fetch paintings with era ID: " + eraId + "."});
         } else if(!data.length){
-             return resp.status(404).json({ success: false, message: "No painting with era ID: " + eraId + " is fetched."});
+             return resp.status(404).json({ success: false, message: "No painting with era ID: [" + eraId + "] is fetched."});
         } else 
             return resp.send(data);
 
@@ -558,7 +558,7 @@ app.get('/api/counts/genres', async (req, resp) => {
 
         if (genreNames.error || !genreNames.data) {
             console.error('Error fetching genre names:', genreNames.error);
-            return resp.status(500).send('Failed to fetch genre names');
+            return resp.status(500).json({success : false, message: 'Failed to fetch genre names', error: genreNames.error});
         }
 
         const result = genreNames.data.map(g => ({
@@ -599,7 +599,7 @@ app.get('/api/counts/artists', async (req, resp) => {
 
         if (artistNames.error || !artistNames.data) {
             console.error('Error fetching artist names:', artistNames.error);
-            return resp.status(500).send('Failed to fetch artist names');
+            return resp.status(500).json({success: false, message: 'Failed to fetch artist names', error: artistNames.error});
         }
 
         const result = artistNames.data.map(a => ({
@@ -647,7 +647,7 @@ app.get('/api/counts/topgenres/:ref', async (req, resp) => {
 
         if (genreNames.error || !genreNames.data) {
             console.error('Error fetching genre names:', genreNames.error);
-            return resp.status(500).send('Failed to fetch genre names');
+            return resp.status(500).json({success: false, message: 'Failed to fetch genre names', error: genreNames.error});
         }
 
         const result = genreNames.data.map(g => ({
