@@ -12,10 +12,10 @@ Glitch - Web application deployment
 
 
 ### Files
-'server-api.js' - Main API file
-'server-provider.js' - Main data provider accessing Supabase URL
-'scripts' folder - Contains different files that handles different query API route.
-'server.js' - This is my first file, that does everything in one, was thinking make use of modules for better readability and easy to manage.
+- 'server-api.js' - Main API file
+- 'server-provider.js' - Main data provider accessing Supabase URL
+- 'scripts' folder - Contains different files that handles different query API route.
+- 'server.js' - This is my first file, that does everything in one, was thinking make use of modules for better readability and easy to manage.
 
 
 ### API Endpoints
