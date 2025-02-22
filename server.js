@@ -508,7 +508,7 @@ app.get('/api/paintings/era/:ref', async (req, resp) => {
 
         if(genres.error){
             console.error("Error fetching era: ", err);
-            resp.status(500).send("Error fetching era");
+            resp.status(500).json({success: false, message: "Error fetching genres with era ${eraId}", error: genres.error});
         }
 
         const genreId = genres.data.map(g => g.genreId)
@@ -541,7 +541,7 @@ app.get('/api/counts/genres', async (req, resp) => {
 
         if(error){
             console.error("Error fetching painting genres: ", error);
-            return resp.status(500).send("failure to fetch painting genres");
+            return resp.status(500).send("Failure to fetch painting genres");
         }
 
         const paintingCount = {};
@@ -624,8 +624,8 @@ app.get('/api/counts/topgenres/:ref', async (req, resp) => {
         .select('genreId', 'paintingId');
 
         if(error){
-            console.error("Error fetching painting genres: ", error);
-            return resp.status(500).send("failure to fetch painting genres");
+            console.error("Error fetching painting and genre IDs: ", error);
+            return resp.status(500).json({success: false, message: "Failure to fetch paintingIDs and genreIDs", error: error});
         }
 
         const paintingCount = {};
@@ -655,7 +655,10 @@ app.get('/api/counts/topgenres/:ref', async (req, resp) => {
             count : paintingCount[g.genreId]
         })).sort((a,b) => b.count - a.count);
 
-        resp.send(result);
+        if(!data.length){
+             return resp.status(404).json({ success: false, message: "No genre has at least [" + atLeast + "] of paintings."});
+        } else 
+            return resp.send(data);
 
         } catch(err) {
             console.error("Unexpected error: ", err);
