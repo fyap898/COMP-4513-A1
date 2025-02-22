@@ -1,6 +1,5 @@
 const express = require('express');
 const supa = require('@supabase/supabase-js');
-const { pid } = require('process');
 const app = express();
 require('dotenv').config();
 
@@ -541,7 +540,7 @@ app.get('/api/counts/genres', async (req, resp) => {
 
         if(error){
             console.error("Error fetching painting genres: ", error);
-            return resp.status(500).send("Failure to fetch painting genres");
+            return resp.status(500).json({success: false, message: "Failure to fetch painting genres", error: error});
         }
 
         const paintingCount = {};
@@ -582,7 +581,7 @@ app.get('/api/counts/artists', async (req, resp) => {
 
         if(error) {
             console.error("Error fetching painting artists: ", error);
-            return resp.status(500).send("failure to fetch painting artists");
+            return resp.status(500).json({success: false, message: "Failure to fetch painting artists", error: error});
         }
 
         const paintingCount = {};
@@ -655,10 +654,10 @@ app.get('/api/counts/topgenres/:ref', async (req, resp) => {
             count : paintingCount[g.genreId]
         })).sort((a,b) => b.count - a.count);
 
-        if(!data.length){
-             return resp.status(404).json({ success: false, message: "No genre has at least [" + atLeast + "] of paintings."});
+        if(!result.length){
+             return resp.status(404).json({ success: false, message: "No genre has at least [" + atLeast + "] paintings."});
         } else 
-            return resp.send(data);
+            return resp.send(result);
 
         } catch(err) {
             console.error("Unexpected error: ", err);
