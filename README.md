@@ -49,29 +49,29 @@ Glitch - Web application deployment
 
 
 ### Example API endpoints
-https://grave-talented-floss.glitch.me/api/eras
-https://grave-talented-floss.glitch.me/api/galleries
-https://grave-talented-floss.glitch.me/api/galleries/30
-https://grave-talented-floss.glitch.me/api/galleries/country/fra
-https://grave-talented-floss.glitch.me/api/artists
-https://grave-talented-floss.glitch.me/api/artists/12
-https://grave-talented-floss.glitch.me/api/artists/search/ma
-https://grave-talented-floss.glitch.me/api/artists/nation/fra
-https://grave-talented-floss.glitch.me/api/paintings
-https://grave-talented-floss.glitch.me/api/paintings/sort/year
-https://grave-talented-floss.glitch.me/api/paintings/sort/title
-https://grave-talented-floss.glitch.me/api/paintings/63
-https://grave-talented-floss.glitch.me/api/paintings/search/port
-https://grave-talented-floss.glitch.me/api/paintings/years/1800/1850
-https://grave-talented-floss.glitch.me/api/paintings/years/1850/1800
-https://grave-talented-floss.glitch.me/api/paintings/galleries/5
-https://grave-talented-floss.glitch.me/api/paintings/artist/16
-https://grave-talented-floss.glitch.me/api/paintings/artists/country/ital
-https://grave-talented-floss.glitch.me/api/genres
-https://grave-talented-floss.glitch.me/api/genres/76
-https://grave-talented-floss.glitch.me/api/genres/painting/408
-https://grave-talented-floss.glitch.me/api/paintings/genre/78
-https://grave-talented-floss.glitch.me/api/paintings/era/2
-https://grave-talented-floss.glitch.me/api/counts/genres
-https://grave-talented-floss.glitch.me/api/counts/artists
-https://grave-talented-floss.glitch.me/api/counts/topgenres/20
+- https://grave-talented-floss.glitch.me/api/eras
+- https://grave-talented-floss.glitch.me/api/galleries
+- https://grave-talented-floss.glitch.me/api/galleries/30
+- https://grave-talented-floss.glitch.me/api/galleries/country/fra
+- https://grave-talented-floss.glitch.me/api/artists
+- https://grave-talented-floss.glitch.me/api/artists/12
+- https://grave-talented-floss.glitch.me/api/artists/search/ma
+- https://grave-talented-floss.glitch.me/api/artists/nation/fra
+- https://grave-talented-floss.glitch.me/api/paintings
+- https://grave-talented-floss.glitch.me/api/paintings/sort/year
+- https://grave-talented-floss.glitch.me/api/paintings/sort/title
+- https://grave-talented-floss.glitch.me/api/paintings/63
+- https://grave-talented-floss.glitch.me/api/paintings/search/port
+- https://grave-talented-floss.glitch.me/api/paintings/years/1800/1850
+- https://grave-talented-floss.glitch.me/api/paintings/years/1850/1800
+- https://grave-talented-floss.glitch.me/api/paintings/galleries/5
+- https://grave-talented-floss.glitch.me/api/paintings/artist/16
+- https://grave-talented-floss.glitch.me/api/paintings/artists/country/ital
+- https://grave-talented-floss.glitch.me/api/genres
+- https://grave-talented-floss.glitch.me/api/genres/76
+- https://grave-talented-floss.glitch.me/api/genres/painting/408
+- https://grave-talented-floss.glitch.me/api/paintings/genre/78
+- https://grave-talented-floss.glitch.me/api/paintings/era/2
+- https://grave-talented-floss.glitch.me/api/counts/genres
+- https://grave-talented-floss.glitch.me/api/counts/artists
+- https://grave-talented-floss.glitch.me/api/counts/topgenres/20
