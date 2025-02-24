@@ -5,10 +5,10 @@ This project is an API for query art from given CSV format data: artist, eras, g
 The CSV datas, will be uploaded to web-database, Supabase, where will be used to access from the API. With given specific API route, the data will be returned in JSON format.
 
 ### Built with:
-Node.JS - JavaScript runtime environment
-Express - Framework for Node
-Supabase - Database for imported data
-Glitch - Web application deployment
+Node.JS - JavaScript runtime environment  
+Express - Framework for Node  
+Supabase - Database for imported data  
+Glitch - Web application deployment  
 
 
 ### Files
